@@ -1,0 +1,18 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Marcano",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "hbs": "^4.0.1"
+  }
+}
