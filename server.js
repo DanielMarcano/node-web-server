@@ -9,17 +9,7 @@ const port = process.env.PORT || 3000;
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentDate', () => new Date().toLocaleDateString());
 hbs.registerHelper('screamIt', text => text.toUpperCase());
-app.use((req, res, next) => {
-  res.render('maintenance.hbs', {message: 'Be right back everyone'});
-});
-// app.set('view engine', 'hbs');
-
-// app.use((req, res, next) => {
-//   let now = new Date().toString();
-//   let request = `${now} ${req.method} ${req.url}\n`;
-//   fs.appendFile('./logger/requests.json', request);
-//   next();
-// });
+app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -37,6 +27,15 @@ app.get('/', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     currentYear: new Date().getFullYear()
+  });
+})
+.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    projects: [
+      'The DM',
+      'cometosayhi',
+      'leaves in the wind'
+    ]
   });
 })
 .get('*', (req, res) => {

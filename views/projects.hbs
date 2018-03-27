@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Projects</title>
+  <style media="screen">
+
+    * {
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: 200;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    ul {
+      display: flex;
+      padding: 0;
+      flex-flow: column wrap;
+      text-align: center;
+      align-items: stretch;
+      list-style: none;
+    }
+
+    li:hover {
+      background-color: #f02097;
+      cursor: pointer;
+      color: white;
+      font-size: 2em;
+    }
+
+  </style>
+</head>
+
+<body>
+  {{>header}}
+  <h2>These are my upcoming projects</h2>
+  <ul>
+    {{#each projects}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</body>
+
+</html>
