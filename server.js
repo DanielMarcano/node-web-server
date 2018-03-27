@@ -4,6 +4,8 @@ const fs = require('fs');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('getCurrentDate', () => new Date().toLocaleDateString());
 hbs.registerHelper('screamIt', text => text.toUpperCase());
@@ -43,4 +45,4 @@ app.get('/', (req, res) => {
 
 let showMessage = (message) => console.log(message);
 
-app.listen(3000, showMessage('Server up on port 3000'));
+app.listen(port, showMessage(`Server is up on port ${port}`));
